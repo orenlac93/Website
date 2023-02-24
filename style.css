@@ -1,0 +1,181 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+:root {  
+  --white: #ffffff;
+  --black: #000;
+  --grey : #D3D3D3;
+  --github : #707070;
+  --linkedin: #16409c;
+  --facebook: #3b5999;
+  --twitter: #55acee;
+  --instagram: #e4405f;
+  --apple: #131418;
+
+  --page: #2d2d31;
+  
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  
+  background: var(--page);
+}
+ul{
+  position:absolute;
+  top:75%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+  display:flex;
+} 
+ul li{
+  list-style:none;
+  margin:0 40px;
+}
+ul li a .fab{
+  font-size:40px;
+  color:var(--black);
+  line-height: 80px;
+  transition:.5s;
+}
+ul li a{
+  position:relative;
+  display:block;
+  width:80px;
+  height:80px;
+  text-align: center;
+  background-color: #808080;
+  transform:perspective(1000px) rotate(-30deg) skew(25deg) translate(0,0);
+  transition:.5s;
+  box-shadow: -30px 30px 10px rgba(0,0,0,.5);
+}
+ul li a::before{
+  content:'';
+  position:absolute;
+  top:10px;
+  left:-20px;
+  height:100%;
+  width:20px;
+  background-color: #93a092;
+  transition:.5s;
+  transform:rotate(0deg) skewY(-45deg);
+}
+ul li a::after{
+  content:'';
+  position:absolute;
+  bottom:-20px;
+  left:-10px;
+  height:20px;
+  width:100%;
+  background-color:var(--grey);
+  transition:.5s;
+  transform:rotate(0deg) skewX(-45deg);
+}
+
+ul li a:hover{
+  transform:perspective(1000px) rotate(-30deg) skew(25deg) translate(20px, -20px);
+  box-shadow: -50px 50px 50px rgba(0,0,0,.5);
+}
+
+ul li:hover .fab{
+  color:var(--white);
+}
+ul li:hover:nth-child(1) a{
+  background:var(--github);
+}
+ul li:hover:nth-child(1) a::before{
+  background:#9b9a9a;
+}
+ul li:hover:nth-child(1) a::after{
+  background:#9b9a9a;
+}
+ul li:hover:nth-child(2) a{
+  background:var(--linkedin);
+}
+ul li:hover:nth-child(2) a::before{
+  background:#1b346b;
+}
+ul li:hover:nth-child(2) a::after{
+  background:#1b346b;
+}
+ul li:hover:nth-child(3) a{
+  background:var(--facebook);
+}
+ul li:hover:nth-child(3) a::before{
+  background:#374b78;
+}
+ul li:hover:nth-child(3) a::after{
+  background:#374b78;
+}
+ul li:hover:nth-child(4) a{
+  background:var(--instagram);
+}
+ul li:hover:nth-child(4) a::before{
+  background:#c9455d;
+}
+ul li:hover:nth-child(4) a::after{
+  background:#c9455d;
+}
+ul li:hover:nth-child(5) a{
+  background:var(--twitter);
+}
+ul li:hover:nth-child(5) a::before{
+  background:#5393c5;
+}
+ul li:hover:nth-child(5) a::after{
+  background:#5393c5;
+}
+
+
+.group {
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.item { 
+  position:absolute;
+  top:10%;
+  left:10%;
+
+  width: 10vw;
+  height: 15vh;
+  background-position: center;
+  background-size: 75vh;
+  background-repeat: no-repeat;
+  
+  margin: 1vw;
+  border-radius: 3vw;
+  display: inline-block;
+  cursor: pointer;
+}
+
+img {
+  filter: grayscale(25%);
+}
+
+h1 {
+  position:absolute;
+  top:10%;
+  left:35%;
+
+  text-align: center;
+  font-size: 4rem;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color:rgb(255, 255, 255);
+  background-image: url(https://media.tenor.com/ibu4ekQ8pV4AAAAd/cool-aesthetic.gif);
+  background-position: center;
+  background-size: cover;
+  background-clip: text;
+  line-height: 90px;
+}
