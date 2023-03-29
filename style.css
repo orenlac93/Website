@@ -20,18 +20,17 @@
 }
 
 body {
-  height: 100vh;
-  display: flex;
-  margin: 0;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
-  
-  background: var(--page);
+  background: #ccc;
+  display: grid;
+  min-height: 100vh;
+  grid-auto-flow: column;
+  place-content: center;
+  gap: 40px;
 }
+
 ul{
   position:absolute;
-  top:75%;
+  top:85%;
   left:50%;
   transform: translate(-50%,-50%);
   margin:0;
@@ -137,45 +136,116 @@ ul li:hover:nth-child(5) a::after{
 }
 
 
-.group {
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-}
 
-.item { 
-  position:absolute;
-  top:10%;
-  left:10%;
 
-  width: 10vw;
-  height: 15vh;
-  background-position: center;
-  background-size: 75vh;
-  background-repeat: no-repeat;
-  
-  margin: 1vw;
-  border-radius: 3vw;
-  display: inline-block;
-  cursor: pointer;
-}
 
-img {
-  filter: grayscale(25%);
-}
+
+
 
 h1 {
   position:absolute;
   top:10%;
-  left:35%;
+  left:15%;
 
   text-align: center;
   font-size: 4rem;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color:rgb(255, 255, 255);
-  background-image: url(https://media.tenor.com/ibu4ekQ8pV4AAAAd/cool-aesthetic.gif);
+  color:rgb(0, 0, 0);
+  
   background-position: center;
   background-size: cover;
   background-clip: text;
   line-height: 90px;
+}
+
+
+
+
+
+
+
+
+#simple-image {
+
+  filter: blur(1px);
+
+  width:150px;
+  height:200px;
+
+  position: absolute;
+  top: 10px;
+  left:10px;
+}
+
+
+#image-effect {
+  /* adjust the below to control the 3D effect */
+  --x: 10px;
+  --y: 20px;
+
+
+  width:225px;
+  height:225px;
+
+  transform: perspective(1000px) rotateX(var(--_a,40deg));
+  /* */
+  clip-path: polygon(       
+     var(--y)              var(--y),       
+     calc(100% - var(--y)) var(--y),       
+     calc(100% - var(--y)) calc(100% - var(--y)),       
+     calc(100% - var(--y) - var(--x)) var(--_c,100%),       
+     calc(var(--x) + var(--y))        var(--_c,100%),      
+     var(--y)        calc(100% - var(--y))       
+     );
+  outline: var(--y) solid rgba(0,0,0,0.4);
+  outline-offset: calc(-1*var(--y));
+  padding: var(--y) var(--y) 0 var(--y);
+  transition: 1s;
+}
+.box:hover img {
+  --_a: 0deg;
+  --_c: calc(100% - var(--y));
+}
+
+/* the below is irrelevant to the 3D effect */
+.box {
+  cursor: pointer;
+}
+h2 {
+  text-align: center;
+  margin: 0;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: sans-serif;
+  transform: translateY(250%);
+  transition: .8s;
+}
+.box:hover h2{
+  transform: translateY(0%);
+  transition: .8s .2s;
+}
+
+
+h3{
+  position:absolute;
+  top:10%;
+  left:45%;
+
+  text-align: center;
+  font-size: 3rem;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color:rgb(0, 0, 0);
+  
+  background-position: center;
+  background-size: cover;
+  background-clip: text;
+  line-height: 90px;
+}
+
+
+
+@media (max-width: 900px) {
+  body {
+    grid-auto-flow: row;   
+  }
 }
