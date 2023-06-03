@@ -177,6 +177,16 @@ h1 {
   left:10px;
 }
 
+#simple-image-certifications{
+
+  width:300px;
+  height:400px;
+
+  position: absolute;
+  top: 200px;
+  left:10px;
+}
+
 
 #image-effect {
   /* adjust the below to control the 3D effect */
@@ -248,4 +258,39 @@ h3{
   body {
     grid-auto-flow: row;   
   }
+}
+
+
+#first-paragraph {
+  position: absolute;
+  top: 250px;
+  left:10px;
+
+  font-family: 'Times New Roman', serif;
+  font-size: 120%;
+  
+}
+
+#second-paragraph {
+  position: absolute;
+  top: 500px;
+  left:10px;
+
+  font-family: 'Times New Roman', serif;
+  font-size: 120%;
+  
+}
+
+#third-paragraph {
+  position: absolute;
+  top: 800px;
+  left:10px;
+
+  font-family: 'Times New Roman', serif;
+  font-size: 120%;
+  
+}
+
+i {
+  font-size:48px;color:rgb(20, 19, 19);
 }
